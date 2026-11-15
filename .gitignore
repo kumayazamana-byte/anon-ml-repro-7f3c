@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+
+# Large raw SLURM logs
+slurm_logs/*.err
+slurm_logs/*.out
+
+# Runtime-only pinned upstream checkout for the Hi-Patch adaptation
+third_party/Hi-Patch/
+third_party/t-PatchGNN/

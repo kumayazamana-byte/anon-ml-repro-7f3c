@@ -1,0 +1,26 @@
+{
+  "package": "anonymous_reproducibility_export",
+  "source_branch": "main",
+  "protocols": {
+    "spiral": {
+      "seeds": [13, 27, 42, 100, 2024],
+      "kernel_scales": [0.02, 0.2, 2.0],
+      "iterations": 5000,
+      "observations": 30,
+      "train_trajectories": 200,
+      "test_trajectories": 100,
+      "grid_points": 150,
+      "noise_std": 0.1,
+      "precision": "fp32"
+    },
+    "uea": {
+      "seeds": [27, 42, 1024],
+      "drop_ratios": [0.3, 0.5, 0.7],
+      "default_dataset": "Heartbeat",
+      "precision": "fp32"
+    }
+  },
+  "outputs": "All outputs must be written below a user-specified relative output root.",
+  "data": "Raw datasets are not included. Download and verify them separately.",
+  "identity": "Anonymous export; no author metadata is part of the package."
+}

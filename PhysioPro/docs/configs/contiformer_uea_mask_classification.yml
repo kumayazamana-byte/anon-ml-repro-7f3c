@@ -1,0 +1,48 @@
+data:
+  type: mask_ts
+  prefix: data/Multivariate_ts
+  name: Heartbeat
+  task: classification
+  dataset_split_ratio: 0.0
+  mask_ratio: 0.3
+network:
+  type: contiformer
+  d_model: 32
+  n_layers: 1
+  n_head: 4
+  d_k: 8
+  d_v: 8
+  d_inner: 128
+  actfn_ode: sigmoid
+  layer_type_ode: concatnorm
+  zero_init_ode: false
+  linear_type_ode: before
+  atol_ode: 1e-1
+  rtol_ode: 1e-1
+  itol_ode: 1e-2
+  method_ode: rk4
+  regularize: false
+  approximate_method: bilinear
+  interpolate_ode: cubic
+  nlinspace: 1
+model:
+  type: mask_ts
+  task: multiclassification
+  optimizer: Adam
+  lr: 0.01
+  weight_decay: 0.0
+  loss_fn: cross_entropy
+  metrics: [accuracy, macro_f1]
+  observe: accuracy
+  lower_is_better: false
+  max_epochs: 1000
+  early_stop: 100
+  early_stop_on_train: true
+  batch_size: 64
+  aggregate: true
+  fill_nan_type: merge
+  norm_time_flg: true
+runtime:
+  seed: 42
+  use_cuda: true
+  output_dir: outputs/Multivariate_ts/Heartbeat/baseline_contiformer

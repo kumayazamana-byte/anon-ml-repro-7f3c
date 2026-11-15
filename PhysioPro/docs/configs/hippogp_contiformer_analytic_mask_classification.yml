@@ -1,0 +1,43 @@
+data:
+  type: mask_ts
+  prefix: data/Multivariate_ts
+  name: Heartbeat
+  task: classification
+  mask_ratio: 0.3
+network:
+  type: hippogp_contiformer_analytic
+  d_model: 32
+  n_layers: 1
+  n_head: 4
+  d_k: 8
+  d_v: 8
+  d_inner: 128
+  dropout: 0.1
+  normalize_before: false
+  hippo_order: 16
+  basis_grid_size: 128
+  memory_normalization: l1
+  local_residual: true
+  local_residual_init: 0.1
+  uncertainty_gate: false
+  jitter: 1e-4
+model:
+  type: mask_ts
+  task: multiclassification
+  optimizer: Adam
+  lr: 0.001
+  weight_decay: 0.0
+  loss_fn: cross_entropy
+  metrics: [accuracy]
+  observe: accuracy
+  lower_is_better: false
+  max_epochs: 500
+  early_stop: 50
+  batch_size: 16
+  aggregate: true
+  fill_nan_type: merge
+  norm_time_flg: true
+runtime:
+  seed: 42
+  use_cuda: true
+  output_dir: outputs/Multivariate_ts/Heartbeat/hippogp_analytic
