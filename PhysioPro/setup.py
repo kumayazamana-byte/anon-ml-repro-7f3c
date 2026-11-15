@@ -52,12 +52,9 @@ def setup():
     setuptools.setup(
         name="physiopro",
         version=get_version(init_file_path),
-        author="PhysioPro team",
-        author_email="physiopro@microsoft.com",
-        description="A toolkit for time-series forecasting tasks",
-        long_description=read("README.md"),
+        description="Anonymous reproducibility package for irregular time-series experiments",
+        long_description="Anonymous reproducibility package for irregular time-series experiments.",
         long_description_content_type="text/markdown",
-        url="https://github.com/microsoft/physiopro",
         packages=setuptools.find_packages(),
         classifiers=[
             "Programming Language :: Python :: 3",
