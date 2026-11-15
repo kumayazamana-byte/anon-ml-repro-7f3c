@@ -69,13 +69,31 @@ To train, remove `--dry-run`. Download the UEA Multivariate 2018 archive into `P
 ## Supplemental rebuttal diagnostics
 
 `rebuttal/phase45_public/` contains the sanitized Phase 4.5 supplemental package
-from the latest rebuttal release. It includes aggregate CSVs, LaTeX tables,
-protocol reports, and analysis scripts for ablation, rank, query/observation
-scaling, wall-clock training, time-to-quality, the scoped UEA analysis, and the
-corrected HiPPO-only PhysioNet analysis. These are supplemental diagnostics,
-not replacements for the primary paper tables. The package explicitly excludes
-invalid PhysioNet seed runs, unmatched CRU evidence, blocked UEA datasets,
-event raw data, checkpoints, and the protected paper-revision candidate.
+from the latest rebuttal release. It includes aggregate CSVs, LaTeX tables and
+protocol reports for the safe supplemental diagnostics. These are supplemental
+diagnostics, not replacements for the primary paper tables.
+
+Validate the package and its manifest with:
+
+```bash
+python scripts/validate_phase45_package.py
+```
+
+The retained diagnostic files are:
+
+- causal ablation: `results/final_ablation_paired.csv`, `results/final_ablation_summary.csv`, and `tables/table_ablation.tex`;
+- memory-rank sensitivity: `results/final_rank_scaling.csv` and `tables/table_rank_scaling.tex`;
+- fixed-checkpoint query scaling: `results/final_query_scaling*.csv` and `tables/table_query_scaling.tex`;
+- observation scaling: `results/final_observation_scaling*.csv` and `tables/table_observation_scaling.tex`;
+- equal-wall-clock training: `results/final_wallclock.csv` and `tables/table_wallclock.tex`;
+- time-to-quality: `results/final_time_to_quality.csv` and `tables/table_time_to_quality.tex`.
+
+These aggregate artifacts are directly inspectable and hash-checked. The raw
+training traces, checkpoints and datasets needed to rerun the Phase 4.5 jobs
+are intentionally excluded. The core rerunnable training commands are the
+Spiral and UEA commands above. Invalid PhysioNet seed runs, unmatched CRU
+evidence, UEA branch variants, event raw data and the protected paper-revision
+candidate are excluded.
 
 ## Scope and evidence boundary
 
