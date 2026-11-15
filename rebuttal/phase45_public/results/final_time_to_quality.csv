@@ -1,0 +1,31 @@
+model,seed,threshold_validation_mae,time_to_quality_seconds
+contiformer,100,0.02,Not Reached
+contiformer,13,0.02,Not Reached
+contiformer,2024,0.02,Not Reached
+contiformer,27,0.02,Not Reached
+contiformer,42,0.02,Not Reached
+hippo_fm,100,0.02,2.6475474540202413
+hippo_fm,13,0.02,3.0048699520120863
+hippo_fm,2024,0.02,3.084929930017097
+hippo_fm,27,0.02,4.135114714008523
+hippo_fm,42,0.02,3.2971436290245038
+latent_ode,100,0.02,Not Reached
+latent_ode,13,0.02,Not Reached
+latent_ode,2024,0.02,Not Reached
+latent_ode,27,0.02,Not Reached
+latent_ode,42,0.02,Not Reached
+neural_cde,100,0.02,Not Reached
+neural_cde,13,0.02,Not Reached
+neural_cde,2024,0.02,Not Reached
+neural_cde,27,0.02,Not Reached
+neural_cde,42,0.02,Not Reached
+neural_ode,100,0.02,Not Reached
+neural_ode,13,0.02,Not Reached
+neural_ode,2024,0.02,Not Reached
+neural_ode,27,0.02,Not Reached
+neural_ode,42,0.02,Not Reached
+transformer,100,0.02,3.32720321699162
+transformer,13,0.02,3.10813763999613
+transformer,2024,0.02,3.7630898589850403
+transformer,27,0.02,3.7473994659958407
+transformer,42,0.02,3.2283093179867137

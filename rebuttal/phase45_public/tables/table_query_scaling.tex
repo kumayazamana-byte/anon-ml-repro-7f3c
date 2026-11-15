@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Fixed-checkpoint query scaling; mean $\pm$ seed SD over five seeds.}
+\label{tab:rebuttal-query}
+\begin{tabular}{llrrr}
+\toprule
+Model & $Q$ & Query ms & Cached total ms & State (KiB) \\
+\midrule
+FMENC\_FM & 16 & 1.599 $\pm$ 0.014 & 10.273 $\pm$ 0.108 & 80.7 \\
+FMENC\_FM & 64 & 1.595 $\pm$ 0.011 & 10.286 $\pm$ 0.075 & 80.7 \\
+FMENC\_FM & 256 & 1.597 $\pm$ 0.010 & 10.281 $\pm$ 0.044 & 80.7 \\
+FMENC\_FM & 1024 & 1.639 $\pm$ 0.012 & 10.360 $\pm$ 0.095 & 80.7 \\
+FMENC\_TOKEN & 16 & 0.652 $\pm$ 0.007 & 6.425 $\pm$ 0.068 & 300.7 \\
+FMENC\_TOKEN & 64 & 0.651 $\pm$ 0.008 & 6.416 $\pm$ 0.059 & 300.7 \\
+FMENC\_TOKEN & 256 & 0.648 $\pm$ 0.006 & 6.405 $\pm$ 0.057 & 300.7 \\
+FMENC\_TOKEN & 1024 & 0.732 $\pm$ 0.004 & 6.496 $\pm$ 0.075 & 300.7 \\
+\bottomrule
+\end{tabular}
+\\[-1mm]
+\begin{minipage}{0.96\linewidth}\footnotesize The E4 diagnostic is hardware/protocol distinct from the RTX5090 wall-clock comparison; it separates query work from history encoding.\end{minipage}
+\end{table}
+

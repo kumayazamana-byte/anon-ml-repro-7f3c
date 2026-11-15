@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\scriptsize
+\caption{Fixed-checkpoint observation scaling for FMENC\_TOKEN; mean $\pm$ seed SD.}
+\label{tab:rebuttal-observation}
+\begin{tabular}{lrrrr}
+\toprule
+$N$ & Encode ms & Query ms & State (KiB) & Peak alloc (MiB) \\
+\midrule
+32 & 5.834 $\pm$ 0.062 & 0.655 $\pm$ 0.008 & 320.8 & 21.6 \\
+64 & 5.823 $\pm$ 0.059 & 0.655 $\pm$ 0.007 & 641.4 & 24.3 \\
+128 & 5.852 $\pm$ 0.063 & 0.658 $\pm$ 0.008 & 1282.7 & 32.7 \\
+256 & 5.859 $\pm$ 0.053 & 0.660 $\pm$ 0.004 & 2565.2 & 65.9 \\
+512 & 5.892 $\pm$ 0.044 & 0.660 $\pm$ 0.003 & 5130.2 & 192.2 \\
+1024 & 6.092 $\pm$ 0.019 & 0.848 $\pm$ 0.002 & 10260.2 & 685.6 \\
+\bottomrule
+\end{tabular}
+\\[-1mm]
+\begin{minipage}{0.96\linewidth}\footnotesize Persistent state grows with the number of written observations in this token-memory diagnostic; it is distinct from the fixed-rank model state used in the main causal runs.\end{minipage}
+\end{table}
+

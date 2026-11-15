@@ -66,6 +66,17 @@ python scripts/run_uea_paper_protocol.py \
 
 To train, remove `--dry-run`. Download the UEA Multivariate 2018 archive into `PhysioPro/data/Multivariate_ts/` before training. The runner never includes raw data or prior result archives.
 
+## Supplemental rebuttal diagnostics
+
+`rebuttal/phase45_public/` contains the sanitized Phase 4.5 supplemental package
+from the latest rebuttal release. It includes aggregate CSVs, LaTeX tables,
+protocol reports, and analysis scripts for ablation, rank, query/observation
+scaling, wall-clock training, time-to-quality, the scoped UEA analysis, and the
+corrected HiPPO-only PhysioNet analysis. These are supplemental diagnostics,
+not replacements for the primary paper tables. The package explicitly excludes
+invalid PhysioNet seed runs, unmatched CRU evidence, blocked UEA datasets,
+event raw data, checkpoints, and the protected paper-revision candidate.
+
 ## Scope and evidence boundary
 
 This export contains reproducibility code only. It deliberately omits raw data, checkpoints, historical result archives, private remote logs, personal documents, machine-specific paths, and protocol-conflicting evidence. The code does not claim that a local rerun reproduces every submitted table unless the exact data, seed, source commit, hardware, precision, and output manifest are recorded for that run.
